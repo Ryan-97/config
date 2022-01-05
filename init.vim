@@ -155,7 +155,7 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " ===
 " === coc.nvim config
 " ===
-let g:coc_global_extensions = [ 'coc-xml', 'coc-vimlsp', 'coc-tsserver', 'coc-snippet', 'coc-pyright', 'coc-neosnippet', 'coc-json', 'coc-highlight', 'coc-git']
+" let g:coc_global_extensions = [ 'coc-xml', 'coc-vimlsp', 'coc-tsserver', 'coc-snippets', 'coc-json', 'coc-highlight', 'coc-git']
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
