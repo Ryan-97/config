@@ -1,0 +1,34 @@
+{
+  "suggest.enablePreview": true,
+  "suggest.noselect": false,
+  "diagnostic.checkCurrentLine": true,
+  "coc.preferences.useQuickfixForLocations": true,
+  "coc.preferences.snippets.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": [
+    "*"
+  ],
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": [
+        "c",
+        "h",
+        "chh",
+        "cpp",
+        "cuda",
+        "objc",
+        "objcpp"
+      ],
+      "rootPatterns": [
+        ".ccls",
+        "compile_commands.json",
+        ".git/",
+        ".hg/"
+      ],
+      "initializationOptions": {
+        "cache": {
+          "directory": "/tmp/ccls"
+        }
+      }
+    }
+  }
