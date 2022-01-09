@@ -76,7 +76,7 @@ nnoremap <silent> ga :wa<CR>
 " ===
 " === airline
 " ===
-let g:snips_author = 'Ryan Lei'
+let g:snips_author = 'Ryan Zhou'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#left_sep = ' '
