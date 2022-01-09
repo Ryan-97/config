@@ -52,7 +52,7 @@ let mapleader=" "
 noremap D 5j
 noremap U 5k
 noremap <LEADER><CR> :nohlsearch<CR>
-noremap we :w<Enter>
+noremap <C-s> :w<Enter>
 noremap <A-f> :AutoformatLine<Enter>
 noremap <LEADER>af :Autoformat<Enter>
 nnoremap <silent> tb :TagbarToggle<CR>
@@ -82,15 +82,15 @@ let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
-nmap <leader>1 <Plug>AirlineSelectTab1
-nmap <leader>2 <Plug>AirlineSelectTab2
-nmap <leader>3 <Plug>AirlineSelectTab3
-nmap <leader>4 <Plug>AirlineSelectTab4
-nmap <leader>5 <Plug>AirlineSelectTab5
-nmap <leader>6 <Plug>AirlineSelectTab6
-nmap <leader>7 <Plug>AirlineSelectTab7
-nmap <leader>8 <Plug>AirlineSelectTab8
-nmap <leader>9 <Plug>AirlineSelectTab9
+nmap <A-1> <Plug>AirlineSelectTab1
+nmap <A-2> <Plug>AirlineSelectTab2
+nmap <A-3> <Plug>AirlineSelectTab3
+nmap <A-4> <Plug>AirlineSelectTab4
+nmap <A-5> <Plug>AirlineSelectTab5
+nmap <A-6> <Plug>AirlineSelectTab6
+nmap <A-7> <Plug>AirlineSelectTab7
+nmap <A-8> <Plug>AirlineSelectTab8
+nmap <A-9> <Plug>AirlineSelectTab9
 
 
 " ===
@@ -155,7 +155,9 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 " ===
 " === coc.nvim config
 " ===
-" let g:coc_global_extensions = [ 'coc-xml', 'coc-vimlsp', 'coc-tsserver', 'coc-snippets', 'coc-json', 'coc-highlight', 'coc-git']
+
+let g:coc_global_extensions = [ 'coc-xml', 'coc-vimlsp', 'coc-tsserver', 'coc-snippets', 'coc-json', 'coc-highlight', 'coc-git']
+
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8
@@ -278,8 +280,8 @@ endif
 
 " Use CTRL-S for selections ranges.
 " Requires 'textDocument/selectionRange' support of language server.
-nmap <silent> <C-s> <Plug>(coc-range-select)
-xmap <silent> <C-s> <Plug>(coc-range-select)
+" nmap <silent> <C-s> <Plug>(coc-range-select)
+" xmap <silent> <C-s> <Plug>(coc-range-select)
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
