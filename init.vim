@@ -333,7 +333,7 @@ let g:Lf_PreviewResult = {
             \ 'Function': 1,
             \ 'Line': 0,
             \ 'Colorscheme': 0,
-            \ 'Rg': 1,
+            \ 'Rg': 0,
             \ 'Gtags': 1
             \}
 let g:Lf_WindowPosition = 'popup'
@@ -344,16 +344,18 @@ let g:Lf_RootMarkers = ['.root', 'compile_command.json', '.git'] "你的根目�
 let g:Lf_WorkingDirectoryMode = 'A'              " 设置 LeaderF 工作目录为项目根目录，如果不在项目中，则为当前目录。
 let g:Lf_ShortcutF = "<Leader>ff"
 let g:Lf_ShortcutB = "<Leader>fb"
+let g:Lf_GtagsAutoGenerate = 0
+let g:Lf_Gtagslabel = 'native-pygments'
 nnoremap <silent><Leader>p :LeaderfFunction<CR> 
-nnoremap <silent><Leader>d :LeaderfTag<CR>         
 nnoremap <silent><leader>h :LeaderfHelp<CR>        
-nnoremap <Leader>rg :Leaderf rg<Space>             
 noremap <Leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>l :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 nnoremap <silent> g/ :Leaderf rg<CR>
+noremap gw :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+nnoremap <silent> gt :Leaderf gtags<CR>
+noremap <silent> gg :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
 " <C-X> open in horizontal split window
 " <C-]> open in vertial split window
-
 
 " === 
 " === vim-tmux-navigator
