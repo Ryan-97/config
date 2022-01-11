@@ -55,7 +55,6 @@ noremap <LEADER><CR> :nohlsearch<CR>
 noremap <C-s> :w<Enter>
 noremap <A-f> :AutoformatLine<Enter>
 noremap <LEADER>af :Autoformat<Enter>
-nnoremap <silent> tb :TagbarToggle<CR>
 nnoremap <C-c> :!g++ -o  %:r.out % -std=c++11<Enter>
 nnoremap <C-x> :!./%:r.out<Enter>
 " buffer
@@ -101,7 +100,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'connorholyday/vim-snazzy'
-Plug 'preservim/nerdtree'
+" Plug 'preservim/nerdtree'
+" Plug 'ryanoasis/vim-devicons'
+Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 Plug 'Yggdroot/indentLine'
 Plug 'luochen1990/rainbow'
 Plug 'plasticboy/vim-markdown'
@@ -112,7 +113,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Plug 'preservim/tagbar'
+Plug 'liuchengxu/vista.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'preservim/nerdcommenter'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -133,7 +134,7 @@ colorscheme dracula
 " === vim-markdown
 " ===
 let g:vim_markdown_math = 1
-nmap <C-m> :MarkdownPreviewToggle<CR>
+" nmap <C-m> :MarkdownPreviewToggle<CR>
 let g:mkdp_browser = 'chromium'
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal_code_blocks = 0
@@ -147,10 +148,7 @@ let g:rainbow_active  = 1
 " ===
 " === nerdtree
 " ===
-nnoremap <C-n> :NERDTreeToggle<CR>
-" autocmd VimEnter * NERDTree | wincmd p
-" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
-
+nnoremap <C-n> :CHADopen<CR>
 
 " ===
 " === coc.nvim config
@@ -345,7 +343,7 @@ let g:Lf_RootMarkers = ['.root', 'compile_command.json', '.git'] "你的根目�
 let g:Lf_WorkingDirectoryMode = 'A'              " 设置 LeaderF 工作目录为项目根目录，如果不在项目中，则为当前目录。
 let g:Lf_ShortcutF = "<Leader>ff"
 let g:Lf_ShortcutB = "<Leader>fb"
-nnoremap <silent><Leader>p :LeaderfFunctionAll<CR> 
+nnoremap <silent><Leader>p :LeaderfFunction<CR> 
 nnoremap <silent><Leader>d :LeaderfTag<CR>         
 nnoremap <silent><leader>h :LeaderfHelp<CR>        
 nnoremap <Leader>rg :Leaderf rg<Space>             
@@ -381,7 +379,7 @@ let g:NERDToggleCheckAllLines = 1
 
 " === 
 " === vim-fugitive config
-" === 
+" ===
 :hi gitcommitSummary ctermfg=yellow ctermbg=red
 noremap <leader>gs :G<CR>
 noremap <leader>gb :Git show-branch<CR>
@@ -389,3 +387,23 @@ noremap <leader>gl :diffget //2<CR>
 noremap <leader>gr :diffget //3<CR>
 " vim-gitgutter
 set signcolumn=yes
+
+
+" ===
+" === vista
+" ===
+noremap <leader>vs :Vista!!<CR>
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+let g:vista_default_executive = 'ctags'
+let g:vista_executive_for = {
+  \ 'cpp': 'coc',
+  \ 'h': 'coc',
+  \ 'c': 'coc',
+  \ }
+" Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
+let g:vista#renderer#enable_icon = 1
+" The default icons can't be suitable for all the filetypes, you can extend it as you wish.
+let g:vista#renderer#icons = {
+\   "function": "\uf794",
+\   "variable": "\uf71b",
+\  }

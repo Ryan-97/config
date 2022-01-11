@@ -121,4 +121,5 @@ alias transz="trans :zh"
 # turn up this config when use second screen
 xrandr --output DisplayPort-0 --brightness 0.86
 
-
+# doom emacs
+export PATH="$HOME/.emacs.d/bin:$PATH"
