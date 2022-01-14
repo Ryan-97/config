@@ -208,10 +208,11 @@ nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
+nmap <silent> gD <Plug>(coc-declaration)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gr <Plug>(coc-references-used)
 
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -353,7 +354,7 @@ noremap <leader>l :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
 nnoremap <silent> g/ :Leaderf rg<CR>
 noremap gw :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
 nnoremap <silent> gt :Leaderf gtags<CR>
-noremap <silent> gg :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
+noremap <silent> gw :<C-U><C-R>=printf("Leaderf! gtags -r %s --auto-jump", expand("<cword>"))<CR><CR>
 " <C-X> open in horizontal split window
 " <C-]> open in vertial split window
 

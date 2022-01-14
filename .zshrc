@@ -123,3 +123,8 @@ xrandr --output DisplayPort-0 --brightness 0.86
 
 # doom emacs
 export PATH="$HOME/.emacs.d/bin:$PATH"
+
+# .tmux.conf
+alias tmux='TERM=xterm-256color tmux'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

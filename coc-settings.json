@@ -2,7 +2,6 @@
   "suggest.enablePreview": true,
   "suggest.noselect": false,
   "diagnostic.checkCurrentLine": true,
-  "coc.preferences.useQuickfixForLocations": true,
   "coc.preferences.snippets.enable": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "*"
