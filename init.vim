@@ -122,6 +122,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'MattesGroeger/vim-bookmarks'
+Plug 'sheerun/vim-polyglot'
 
 
 call plug#end()
@@ -135,7 +136,7 @@ colorscheme dracula
 " === vim-markdown
 " ===
 let g:vim_markdown_math = 1
-" nmap <C-m> :MarkdownPreviewToggle<CR>
+nmap <C-m> :MarkdownPreviewToggle<CR>
 let g:mkdp_browser = 'chromium'
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_conceal_code_blocks = 0
@@ -344,10 +345,12 @@ let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu S
 let g:Lf_RootMarkers = ['.root', 'compile_command.json', '.git'] "你的根目录标志
 let g:Lf_WorkingDirectoryMode = 'A'              " 设置 LeaderF 工作目录为项目根目录，如果不在项目中，则为当前目录。
 let g:Lf_ShortcutF = "<Leader>ff"
+# <F5> refresh the cache
 let g:Lf_ShortcutB = "<Leader>fb"
 let g:Lf_GtagsAutoGenerate = 0
 let g:Lf_Gtagslabel = 'native-pygments'
 nnoremap <silent><Leader>p :LeaderfFunction<CR> 
+nnoremap <silent><Leader>pa :LeaderfFunctionAll<CR> 
 nnoremap <silent><leader>h :LeaderfHelp<CR>        
 noremap <Leader>fm :<C-U><C-R>=printf("Leaderf mru %s", "")<CR><CR>
 noremap <leader>l :<C-U><C-R>=printf("Leaderf bufTag %s", "")<CR><CR>
