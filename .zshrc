@@ -97,11 +97,13 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
+alias vimconfig="vim ~/.config/nvim/init.vim"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vi=nvim
 alias vim=nvim
 alias transz="trans :zh"
+alias ra=ranger
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -119,12 +121,9 @@ alias transz="trans :zh"
 
 # <<< conda initialize <<<
 # turn up this config when use second screen
-xrandr --output DisplayPort-0 --brightness 0.86
+xrandr --output DisplayPort-0 --brightness 0.78
 
 # doom emacs
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
-# .tmux.conf
-alias tmux='TERM=xterm-256color tmux'
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[[ -s /etc/profile.d/autojump.sh ]] && source /etc/profile.d/autojump.sh

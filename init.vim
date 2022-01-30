@@ -113,7 +113,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
-Plug 'liuchengxu/vista.vim'
+Plug 'preservim/tagbar'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'preservim/nerdcommenter'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -123,6 +123,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'sheerun/vim-polyglot'
+Plug 'github/copilot.vim'
 
 
 call plug#end()
@@ -151,6 +152,8 @@ let g:rainbow_active  = 1
 " === nerdtree
 " ===
 nnoremap <C-n> :CHADopen<CR>
+" Close the tab if NERDTree is the only window remaining in it.
+" autocmd bufenter * if (winnr("$") == 1 && &buftype == "nofile" && &filetype == "CHADTree") | bd | endif
 
 " ===
 " === coc.nvim config
@@ -345,7 +348,7 @@ let g:Lf_StlSeparator = { 'left': "\ue0b0", 'right': "\ue0b2", 'font': "DejaVu S
 let g:Lf_RootMarkers = ['.root', 'compile_command.json', '.git'] "你的根目录标志
 let g:Lf_WorkingDirectoryMode = 'A'              " 设置 LeaderF 工作目录为项目根目录，如果不在项目中，则为当前目录。
 let g:Lf_ShortcutF = "<Leader>ff"
-# <F5> refresh the cache
+" <F5> refresh the cache
 let g:Lf_ShortcutB = "<Leader>fb"
 let g:Lf_GtagsAutoGenerate = 0
 let g:Lf_Gtagslabel = 'native-pygments'
@@ -399,18 +402,11 @@ set signcolumn=yes
 " ===
 " === vista
 " ===
-noremap <leader>vs :Vista!!<CR>
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-let g:vista_default_executive = 'ctags'
-let g:vista_executive_for = {
-  \ 'cpp': 'coc',
-  \ 'h': 'coc',
-  \ 'c': 'coc',
-  \ }
-" Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
-let g:vista#renderer#enable_icon = 1
-" The default icons can't be suitable for all the filetypes, you can extend it as you wish.
-let g:vista#renderer#icons = {
-\   "function": "\uf794",
-\   "variable": "\uf71b",
-\  }
+noremap <leader>tb :TagbarToggle<CR>
+
+" ===
+" === coc-clangd
+" ===
+noremap <leader>sh :CocCommand clangd.switchSourceHeader<CR>
+noremap <leader>si :CocCommand clangd.symbolInfo<CR> 
+
