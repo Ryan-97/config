@@ -108,6 +108,7 @@ Plug 'luochen1990/rainbow'
 Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 Plug 'joker1007/vim-markdown-quote-syntax'
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'honza/vim-snippets'
